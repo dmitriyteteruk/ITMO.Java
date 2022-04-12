@@ -1,5 +1,7 @@
 package org.lesson5;
 
+import java.io.BufferedReader;
+import java.nio.Buffer;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -12,40 +14,40 @@ public class Strings {
         String firstString;
         String secondString;
 
-        System.out.println("Р—Р°РґР°С‡Р° 1.1 - СЃСЂР°РІРёС‚СЊ РґР»РёРЅСѓ СЃС‚СЂРѕРє");
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРё:");
+        System.out.println("Задача 1.1 - сравить длину строк");
+        System.out.println("Введите текст первой строки:");
         Scanner scanner = new Scanner(System.in);
         firstString = scanner.nextLine();
 
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РІС‚РѕСЂРѕР№ СЃС‚СЂРѕРєРё:");
+        System.out.println("Введите текст второй строки:");
         secondString = scanner.nextLine();
         compareStringLengths(firstString.length(), secondString.length());
 
-        System.out.println("Р—Р°РґР°С‡Р° 1.2 - РЅР°Р№С‚Рё СЃР°РјРѕРµ РґР»РёРЅРЅРѕРµ СЃР»РѕРІРѕ РІ СЃС‚СЂРѕРєР°С…");
+        System.out.println("Задача 1.2 - найти самое длинное слово в строках");
         findLongestWord(firstString, secondString);
 
-        System.out.println("\n\nР—Р°РґР°С‡Р° 2 - РїСЂРѕРІРµСЂРёС‚СЊ СЃР»РѕРІРѕ РЅР° РїР°Р»РёРЅРґСЂРѕРј");
-        System.out.println("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ");
+        System.out.println("\n\nЗадача 2 - проверить слово на палиндром");
+        System.out.println("Введите слово");
         String polyndrom = scanner.nextLine();
         checkForPolyndrom(polyndrom);
 
-        System.out.println("\n\nР—Р°РґР°С‡Р° 3 - РІС‹СЂРµР·Р°С‚СЊ СЃР»РѕРІРѕ \"Р±СЏРєР°\" РёР· С‚РµРєСЃС‚Р°");
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ СЃРѕ СЃР»РѕРІРѕРј \"Р±СЏРєР°\"");
+        System.out.println("\n\nЗадача 3 - вырезать слово \"бяка\" из текста");
+        System.out.println("Введите текст со словом \"бяка\"");
         String byakaString;
         byakaString = scanner.nextLine();
         byaka(byakaString);
 
-        System.out.println("\n\nР—Р°РґР°С‡Р° 4 - РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РІС…РѕР¶РґРµРЅРёР№ РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё РІ РґСЂСѓРіСѓСЋ");
+        System.out.println("\n\nЗадача 4 - Найти количество вхождений одной строки в другую");
         String mainString;
         String subString;
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РїРµСЂРІРѕР№ (РѕСЃРЅРѕРІРЅРѕР№) СЃС‚СЂРѕРєРё");
+        System.out.println("Введите текст первой (основной) строки");
         mainString = scanner.nextLine();
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РїРѕРґСЃС‚СЂРѕРєРё, РІС…РѕРґСЏС‰РµР№ РІ РѕСЃРЅРѕРІРЅСѓСЋ СЃС‚СЂРѕРєСѓ");
+        System.out.println("Введите текст подстроки, входящей в основную строку");
         subString = scanner.nextLine();
         countSubString(mainString, subString);
 
-        System.out.println("\n\nР—Р°РґР°С‡Р° 5 - РќР°РїРёС€РёС‚Рµ РјРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ РёРЅРІРµСЂС‚РёСЂСѓРµС‚ СЃР»РѕРІР° РІ СЃС‚СЂРѕРєРµ. \n" +
-                "Р‘СѓРґРµРј РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ \"byakaString\" РІ РєР°С‡РµС‚СЃРІРµ РїР°СЂР°РјРµС‚СЂР° РґР»СЏ РёРЅРІРµСЂСЃРёРё");
+        System.out.println("\n\nЗадача 5 - Напишите метод, который инвертирует слова в строке. \n" +
+                "Будем использовать \"byakaString\" в качетсве параметра для инверсии");
         stringInversion(byakaString);
 
     }
@@ -54,12 +56,12 @@ public class Strings {
 
 
         if (a == b){
-            System.out.println("Р”Р»РёРЅР° СЃС‚СЂРѕРє РѕРґРёРЅР°РєРѕРІР°СЏ");
+            System.out.println("Длина строк одинаковая");
         }
         else if (a > b) {
-            System.out.println("РџРµСЂРІР°СЏ СЃС‚СЂРѕРєР° РґР»РёРЅРЅРµРµ РІС‚РѕСЂРѕР№");
+            System.out.println("Первая строка длиннее второй");
         }
-        else System.out.println("Р’С‚РѕСЂР°СЏ СЃС‚СЂРѕРєР° РґР»РёРЅРЅРµРµ РїРµСЂРІРѕР№");
+        else System.out.println("Вторая строка длиннее первой");
         System.out.println();
     }
 
@@ -71,12 +73,12 @@ public class Strings {
                 .max(Comparator.comparingInt(String::length))
                 .orElse(null);
         if (longest1.length() > longest2.length()){
-            System.out.println("РЎР°РјРѕРµ РґР»РёРЅРЅРѕРµ СЃР»РѕРІРѕ РІ РґРІСѓС… СЃС‚СЂРѕРєР°С…: " + longest1);
+            System.out.println("Самое длинное слово в двух строках: " + longest1);
         } else if (longest1.length() == longest2.length())
-            System.out.println("РЎР°РјС‹Рµ РґР»РёРЅРЅС‹Рµ СЃР»РѕРІР° РІ РґРІСѓС… СЃС‚СЂРѕРєР°С…: "
-                    + longest1 + " Рё " + longest2 + ". РС… РґР»РёРЅР° РѕРґРёРЅР°РєРѕРІР°.");
+            System.out.println("Самые длинные слова в двух строках: "
+                    + longest1 + " и " + longest2 + ". Их длина одинакова.");
         else
-            System.out.println("РЎР°РјРѕРµ РґР»РёРЅРЅРѕРµ СЃР»РѕРІРѕ РІ РґРІСѓС… СЃС‚СЂРѕРєР°С…: " + longest2);
+            System.out.println("Самое длинное слово в двух строках: " + longest2);
 
     }
 
@@ -85,17 +87,17 @@ public class Strings {
         String s1 = string.toLowerCase();
         String s2 = new StringBuilder(string.toLowerCase()).reverse().toString();
         if (s1.equals(s2)){
-            System.out.println("РЎР»РѕРІРѕ " + string + " РїРѕР»РёРЅРґСЂРѕРј");
+            System.out.println("Слово " + string + " полиндром");
         } else
-            System.out.println("РЎР»РѕРІРѕ " + string + " РЅРµ РїРѕР»РёРЅРґСЂРѕРј");
+            System.out.println("Слово " + string + " не полиндром");
     }
 
     public static void byaka(String string){
         String[] stringSplit = string.split(" ");
 
         for (int i = 0; i < stringSplit.length; i++){
-            if (stringSplit[i].equalsIgnoreCase("Р±СЏРєР°")){
-                stringSplit[i] = "[РІС‹СЂРµР·Р°РЅРѕ С†РµРЅР·СѓСЂРѕР№]";
+            if (stringSplit[i].equalsIgnoreCase("бяка")){
+                stringSplit[i] = "[вырезано цензурой]";
             }
         }
 
@@ -104,7 +106,7 @@ public class Strings {
             builder.append(stringMerge)
                     .append(" ");
         }
-        System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ СЂР°Р±РѕС‚С‹ С†РµРЅР·РѕСЂР°:");
+        System.out.println("Результат работы цензора:");
         System.out.println(builder);
     }
 
@@ -115,7 +117,7 @@ public class Strings {
         while (matcher.find()){
             counter++;
         }
-        System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РІС…РѕР¶РґРµРЅРёР№ \"" + subString +  "\" РІ РѕСЃРЅРѕРІРЅСѓСЋ СЃС‚СЂРѕРєСѓ СЂР°РІРЅРѕ: " + counter);
+        System.out.println("Количество вхождений \"" + subString +  "\" в основную строку равно: " + counter);
 
     }
 
@@ -126,8 +128,8 @@ public class Strings {
             builder.append(new StringBuilder(stringReversed).reverse()
                     .append(" "));
         }
-        System.out.println("РСЃС…РѕРґРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ \"byakaString\": \t" + string + "\n" +
-                "Р РµРІРµСЂСЃ СЃС‚СЂРѕРєРё \"byakaString\": \t\t" + builder);
+        System.out.println("Исходное значение \"byakaString\": \t" + string + "\n" +
+                "Реверс строки \"byakaString\": \t\t" + builder);
 
     }
 }
