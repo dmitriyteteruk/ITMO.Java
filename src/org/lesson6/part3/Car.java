@@ -1,6 +1,6 @@
-package org.lesson6;
+package org.lesson6.part3;
 
-public class Car3 {
+public class Car {
     public int weight;
     public String model;
     public String color;
@@ -12,12 +12,12 @@ public class Car3 {
         System.out.println("÷вет машины - " + color + " и еЄ скорость - " + speed);
     }
 
-    public Car3(int w, String m, String c, float s) {
+    public Car(int w, String m, String c, float s) {
         weight = w;
         model = m;
         color = c;
         speed = s;
     }
 
-    public Car3() {}
+    public Car() {}
 }

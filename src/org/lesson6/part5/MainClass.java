@@ -1,9 +1,9 @@
-package org.lesson6;
+package org.lesson6.part5;
 
 import java.util.Scanner;
 
-public class MainClass5 {
-    private int userAge;
+public class MainClass {
+    public int userAge;
     public Scanner scanner = new Scanner(System.in);
 
     public void setUserAge(){
