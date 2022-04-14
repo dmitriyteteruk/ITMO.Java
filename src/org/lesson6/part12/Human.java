@@ -23,13 +23,16 @@ abstract class Human{
     abstract void showAllInfo();
 
     // конструктор для установки значений
-    Human(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите имя: ");
-        firstName = scanner.nextLine();
-        System.out.println("Введите фамилию: ");
-        lastName = scanner.nextLine();
+    Human(String firstName, String lastName){
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите имя: ");
+//        firstName = scanner.nextLine();
+//        System.out.println("Введите фамилию: ");
+//        lastName = scanner.nextLine();
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
+
 }
 
 

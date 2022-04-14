@@ -15,7 +15,7 @@ public class Truck extends Car {
         this.maxLoad = maxLoad;
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Truck truck = new Truck(1000, "CarModel", "Blue", 50, 2000);
         truck.outPut();
         Truck.newWheels(6);

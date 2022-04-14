@@ -2,7 +2,7 @@ package org.lesson6.part12;
 
 import java.util.Scanner;
 
-class BankEmployee extends Human {
+class BankEmployee {
     // строковое поле Название банка
     String bankName;
 
@@ -12,11 +12,11 @@ class BankEmployee extends Human {
         bankName = scanner.nextLine();
     }
 
-    @Override
-    void showAllInfo() {
-        System.out.println("Вся информация: ");
-        System.out.println(firstName + " " + lastName + " " + bankName);
-    }
+//    @Override
+//    void showAllInfo() {
+//        System.out.println("Вся информация: ");
+//        System.out.println(firstName + " " + lastName + " " + bankName);
+//    }
 
 }
 

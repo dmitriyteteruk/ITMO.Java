@@ -8,8 +8,8 @@ public class Car {
 
 
     public void outPut () {
-        System.out.println("Вес " + model + " составляет " + weight + "кг.");
-        System.out.println("Цвет машины - " + color + " и её скорость - " + speed);
+        System.out.println("Р’РµСЃ " + model + " СЃРѕСЃС‚Р°РІР»СЏРµС‚ " + weight + "РєРі.");
+        System.out.println("Р¦РІРµС‚ РјР°С€РёРЅС‹ - " + color + " Рё РµС‘ СЃРєРѕСЂРѕСЃС‚СЊ - " + speed);
     }
 
     public Car(int w, String m, String c, float s) {
