@@ -7,25 +7,25 @@ public class Main {
 
 
     public static void main(String[] args) {
-        long start1 = System.nanoTime();
+        long start1 = System.currentTimeMillis();
         add1MlnToArray();
-        long end1 = System.nanoTime();
+        long end1 = System.currentTimeMillis();
         System.out.println("Execution time for add1MlnToArray(): " + (end1-start1));
 
-        long start2 = System.nanoTime();
+        long start2 = System.currentTimeMillis();
         add1MlnToLinkedList();
-        long end2 = System.nanoTime();
+        long end2 = System.currentTimeMillis();
         System.out.println("Execution time for add1MlnToLinkedList(): " + (end2-start2));
 
-        long start3 = System.nanoTime();
+        long start3 = System.currentTimeMillis();
         random100kSearchArray();
-        long end3 = System.nanoTime();
-        System.out.println("Execution time for random100kSearchArray(): " + (end3-start3-(end1-start1)));
+        long end3 = System.currentTimeMillis();
+        System.out.println("Execution time for random100kSearchArray(): " + ((end3-start3)-(end1-start1)));
 
-        long start4 = System.nanoTime();
+        long start4 = System.currentTimeMillis();
         random100kSearchList();
-        long end4 = System.nanoTime();
-        System.out.println("Execution time for random100kSearchList(): " + (end4-start4-(end2-start2)));
+        long end4 = System.currentTimeMillis();
+        System.out.println("Execution time for random100kSearchList(): " + ((end4-start4)-(end2-start2)));
     }
 
     private static void random100kSearchList() {
