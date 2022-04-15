@@ -2,6 +2,7 @@ package org.lesson9.part4;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class User {
@@ -54,9 +55,10 @@ public class User {
         for (Map.Entry<User, Integer> pair : map.entrySet()){
             if (pair.getKey().getName().equals(searchName)){
                 System.out.println("Баллы участника: " + pair.getValue());
-            } else if (pair.getKey().getName() != searchName){
+                return;
+            } else if (!Objects.equals(pair.getKey().getName(), searchName)){
                 System.out.println("Такой участник не найден");
-                break;
+                return;
             }
         }
     }

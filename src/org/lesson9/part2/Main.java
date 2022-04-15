@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> integerList = new ArrayList<>();
+        List<Integer> integerList = new ArrayList<>();
         integerList.add(1);
         integerList.add(2);
         integerList.add(3);
@@ -27,7 +27,7 @@ public class Main {
 
     }
 
-    public static Set<Integer> getListReturnNoDoubles(ArrayList arrayList){
+    public static Set<Integer> getListReturnNoDoubles(List<Integer> arrayList){
         Set<Integer> set = new HashSet<>();
         set.addAll(arrayList);
         return set;
