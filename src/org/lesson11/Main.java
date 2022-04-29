@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Задача 3: Используя решение 1 и 2, напишите метод, который склеивает два текстовый файла один.");
         joinTwoFilesInOne(fileToRead, fileToWrite, joinedFiles);
 
-        System.out.println("Задача 3: Используя решение 1 и 2, напишите метод, который склеивает два текстовый файла один.");
+        System.out.println("Задача 4: Ин.");
         replaceCharsWith$Sign(joinedFiles, fileWithReplacedChars);
 
     }
@@ -42,8 +42,10 @@ public class Main {
         }
         finally{
             try {
-                assert fileWriter != null;
-                fileWriter.close();
+                if (fileWriter != null){
+                    fileWriter.close();
+                }
+
             } catch (IOException e) {
                 e.getMessage();
             }
@@ -91,14 +93,23 @@ public class Main {
     // 1 метод - читаем текстовый файл и записываем в список строк
     public static  List<String> readFileWriteToString(File fileToRead) {
         List<String> stringList = new ArrayList<>();
+        BufferedReader bufferedReader = null;
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileToRead));
+            bufferedReader = new BufferedReader(new FileReader(fileToRead));
             String input = null;
             while ((input = bufferedReader.readLine()) != null){
                 stringList.add(input);
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            if(bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         // переводит строку в список строк с разделнием через пробел.
@@ -109,43 +120,40 @@ public class Main {
 
     // 4 метод - заменяем все символьные знаки на знак "$"
     public static void replaceCharsWith$Sign(File file1, File file2){
-        String string = null;
 
-        InputStream inputStream = null;
-        OutputStream outputStream = null;
+
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+
 
         try {
-            inputStream = new FileInputStream(file1);
-            outputStream = new FileOutputStream(file2);
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file1));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file2));
+            bufferedReader = new BufferedReader(new FileReader(file1));
+            bufferedWriter = new BufferedWriter(new FileWriter(file2));
 
-            String sting = null;
-            while (inputStream.available() > 0){
-                outputStream.write(inputStream.read());
-            }
+            String string = null;
+
             while ((string = bufferedReader.readLine()) != null)
             {
-                bufferedWriter.write(sting.replaceAll("[^а-яА-яa-zA-Z\\d]", "\\$"));
+                bufferedWriter.write(string.replaceAll("[^а-яА-яa-zA-Z\\d]", "\\$"));
                 bufferedWriter.newLine();
             }
-            bufferedReader.close();
-            bufferedWriter.close();
+
 
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
             try{
-                if (inputStream != null && outputStream != null){
-                    inputStream.close();
-                    outputStream.close();
+                if (bufferedReader != null){
+                    bufferedReader.close();
                 }
+                if (bufferedWriter != null){
+                    bufferedWriter.close();
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
         }
     }
 }
